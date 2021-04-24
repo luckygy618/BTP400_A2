@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 News and Data App</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../static/css/dist/main.css" th:href="@{/css/dist/main.css}">
+</head>
+<body>
+    <header class="p-5 bg-primary text-white">
+        <h1>COVID-19 News and Data App</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/news}">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+		<div class="container p-5">
+			<p th:text="'Summary Date: ' + ${date}" />
+            <p th:text="'Summary Cumulative Cases: ' + ${cumulativeCases}" />
+			<p th:text="'Summary Active Cases: ' + ${activeCases}" />
+			<p th:text="'Summary Deaths: ' + ${deaths}" />
+			<p th:text="'Summary Cumulative Deaths: ' + ${cumulativeDeaths}" />
+        </div>
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 mb-5">
+                    <h2 class="text-center mb-3">Search for COVID-19 data by province</h2>
+                    <div class="input-group">
+                        <select class="form-control rounded-pill" onchange="if (this.value) window.location.href= 'province?province=' + this.value">
+							<option value="">Select Province</option>
+							<option value="Alberta">Alberta</option>
+							<option value="BC">British Columbia</option>
+							<option value="Manitoba">Manitoba</option>
+							<option value="NB">New Brunswick</option>
+							<option value="NL">Newfoundland and Labrador</option>
+							<option value="NT">Northwest Territories</option>
+							<option value="NS">Nova Scotia</option>
+							<option value="NU">Nunavut</option>
+							<option value="ON">Ontario</option>
+							<option value="PE">Prince Edward Island</option>
+							<option value="Quebec">Quebec</option>
+							<option value="Saskatchewan">Saskatchewan</option>
+							<option value="Yukon">Yukon</option>
+						</select>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-5">
+                    <h2 class="text-center mb-3">Search for COVID-19 data by region</h2>
+                    <div class="input-group">
+                        <select class="form-control rounded-pill" onchange="if (this.value) window.location.href= 'region?region=' + this.value">
+							<option value="">Select Region</option>
+							<option value="4832">Calgary</option>
+							<option value="4833">Alberta Central</option>
+							<option value="4834">Edmonton</option>
+							<option value="4835">Alberta North</option>
+							<option value="4831">Alberta South</option>
+							<option value="591">Fraser</option>
+							<option value="592">Interior</option>
+							<option value="593">Island</option>
+							<option value="594">Northern BC</option>
+							<option value="595">Vancouver Coastal</option>
+							<option value="4603">Interlake-Eastern</option>
+							<option value="4604">Northern Manitoba</option>
+							<option value="4602">Prairie Mountain</option>
+							<option value="4605">Southern Health</option>
+							<option value="4601">Winnipeg</option>
+							<option value="1301">Zone 1 (Moncton area)</option>
+							<option value="1302">Zone 2 (Saint John area)</option>
+							<option value="1303">Zone 3 (Fredericton area)</option>
+							<option value="1304">Zone 4 (Edmundston area)</option>
+							<option value="1305">Zone 5 (Campbellton area)</option>
+							<option value="1306">Zone 6 (Bathurst area)</option>
+							<option value="1307">Zone 7 (Miramichi area)</option>
+							<option value="1012">Central NL</option>
+							<option value="1011">Eastern NL</option>
+							<option value="1014">Labrador-Grenfell</option>
+							<option value="1013">Western NL</option>
+							<option value="1201">Zone 1 - Western Nova Scotia</option>
+							<option value="1202">Zone 2 - Northern Nova Scotia</option>
+							<option value="1203">Zone 3 - Eastern Nova Scotia</option>
+							<option value="1204">Zone 4 - Central Nova Scotia</option>
+							<option value="6201">Nunavut</option>
+							<option value="6101">NWT</option>
+							<option value="3526">Algoma</option>
+							<option value="3527">Brant</option>
+							<option value="3540">Chatham-Kent</option>
+							<option value="3530">Durham</option>
+							<option value="3558">Eastern Ontario</option>
+							<option value="3533">Grey Bruce</option>
+							<option value="3534">Haldimand-Norfolk</option>
+							<option value="3535">Haliburton Kawartha Pineridge</option>
+							<option value="3536">Halton</option>
+							<option value="3537">Hamilton</option>
+							<option value="3538">Hastings Prince Edward</option>
+							<option value="3539">Huron Perth</option>
+							<option value="3541">Kingston Frontenac Lennox &amp; Addington</option>
+							<option value="3542">Lambton</option>
+							<option value="3543">Leeds Grenville and Lanark</option>
+							<option value="3544">Middlesex-London</option>
+							<option value="3546">Niagara</option>
+							<option value="3547">North Bay Parry Sound</option>
+							<option value="3549">Northwestern Ontario</option>
+							<option value="3551">Ottawa</option>
+							<option value="3553">Peel</option>
+							<option value="3555">Peterborough</option>
+							<option value="3556">Porcupine</option>
+							<option value="3557">Renfrew</option>
+							<option value="3560">Simcoe Muskoka</option>
+							<option value="3575">Southwestern Ontario</option>
+							<option value="3561">Sudbury</option>
+							<option value="3562">Thunder Bay</option>
+							<option value="3563">Timiskaming</option>
+							<option value="3595">Toronto</option>
+							<option value="3565">Waterloo</option>
+							<option value="3566">Wellington Dufferin Guelph</option>
+							<option value="3568">Windsor-Essex</option>
+							<option value="3570">York</option>
+						</select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white p-5">
+        <p class="text-center"><small>&copy; COVID-19 News and Data App</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.covid19app"},{"l":"com.covid19app.data"},{"l":"com.covid19app.news"}];updateSearchResults();

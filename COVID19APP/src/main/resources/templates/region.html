@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="'COVID-19 News and Data App - ' + ${healthRegion}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../static/css/dist/main.css" th:href="@{/css/dist/main.css}">
+</head>
+<body>
+    <header class="p-5 bg-primary text-white">
+        <h1 th:text="'COVID-19 News and Data App - ' + ${healthRegion}" />
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/news}">News</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container p-5">
+            <p th:text="'Region: ' + ${healthRegion}" />
+            <p th:text="'Region Province: ' + ${province}" />
+            <p th:text="'Region Date: ' + ${date}" />
+            <p th:text="'Region Cumulative Cases: ' + ${cumulativeCases}" />
+			<p th:text="'Region Active Cases: ' + ${cases}" />
+			<p th:text="'Region Deaths: ' + ${deaths}" />
+			<p th:text="'Region Cumulative Deaths: ' + ${cumulativeDeaths}" />
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white p-5">
+        <p class="text-center"><small>&copy; COVID-19 News and Data App</small></p>
+    </footer>
+</body>
+</html>
